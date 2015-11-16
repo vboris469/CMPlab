@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +8,12 @@
 <title>Open Server</title>
 </head>
 <body>
+<?php
+if (isset($_SESSION["login"]))
+{
+echo "Hello, ".$_SESSION["login"];
+}
+?>
 <form action="calendar.php" method="post">
 <select name="year">
 <?php
